@@ -2,7 +2,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-
+const lightbox = new SimpleLightbox('.gallery a');
 export const clearGallery = () => {
   const gallery = document.querySelector('.gallery');
   gallery.innerHTML = '';
@@ -28,15 +28,15 @@ export const renderImages = images => {
     .join('');
 
   gallery.insertAdjacentHTML('beforeend', markup);
-
-  const lightbox = new SimpleLightbox('.gallery a');
   lightbox.refresh();
 };
 
 export const showLoadingIndicator = () => {
   const loader = document.querySelector('.loader');
   loader.style.display = 'block';
-  loader.innerHTML = '<div class="spinner"></div>';
+  loader.innerHTML = `
+    <p class="loader-text">Loading images, please wait...</p>
+  `;
 };
 
 export const hideLoadingIndicator = () => {

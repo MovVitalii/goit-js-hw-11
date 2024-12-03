@@ -76,3 +76,17 @@ button:hover {
   background-color: #f0f0f0;
   display: flex;
 }
+
+.loader {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  text-align: center;
+  z-index: 1000;
+}
+.loader-text {
+  font-size: 16px;
+  color: #333;
+}
